@@ -44,9 +44,6 @@ Below is an overview of the key files in this repository:
 ├── evaluate.py          # Model evaluation: confusion matrices & classification reports
 ├── model.py             # Building the transfer-learning dual-output model
 ├── train.py             # Training script: from data loading to saving the final model
-├── dual_output_cnn_transfer.keras    # (Optional) A saved/trained model file (if generated)
-├── CS131 Project.pdf    # Project write-up with background and motivations
-├── CS131 2025 Final Project Guideline.pdf # Course requirements and guidelines
 └── README.md            # You are here!
 ```
 
@@ -220,8 +217,7 @@ This step produces metrics like **accuracy**, **precision**, **recall**, and **F
 
 1. **Clone** this repository:
    ```bash
-   git clone https://github.com/YourUser/coral-classification.git
-   cd coral-classification
+   git clone https://YourUser/@github.com/GerwinMateo/CS131-FinalProject.git
    ```
 
 2. **Install** dependencies:
@@ -240,13 +236,13 @@ This step produces metrics like **accuracy**, **precision**, **recall**, and **F
 
 4. **Train** the model:
    ```bash
-   python train.py
+   python src/train.py
    ```
    - This will train the dual-output model and save it to `dual_output_cnn_transfer.keras`.
 
 5. **Evaluate** the model on the test set:
    ```bash
-   python evaluate.py
+   python src/evaluate.py
    ```
    - This loads `dual_output_cnn_transfer.keras` and prints confusion matrices / classification reports for both tasks.
 
@@ -256,11 +252,7 @@ This step produces metrics like **accuracy**, **precision**, **recall**, and **F
 
 - **Project Specification**:  
   See **CS131 Project.pdf** for the original project description and background.  
-  citeturn0file0
-
-- **CS131 2025 Final Project Guideline.pdf**:  
-  Details the requirements for the course project (proposal, demo day, final report, etc.).  
-  citeturn0file1
+    https://docs.google.com/document/d/1ULIov0SK_3703Mkj-eQP-F6OJzKyent0_9p6ZNMXcdA/edit?usp=sharing
 
 - **MobileNetV2**:  
   [Sandler et al., *MobileNetV2: Inverted Residuals and Linear Bottlenecks* (CVPR, 2018)](https://arxiv.org/abs/1801.04381)
