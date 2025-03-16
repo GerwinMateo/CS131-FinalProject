@@ -1,0 +1,5 @@
+# Minimal set of libraries required (versions as examples):
+tensorflow
+numpy
+pandas
+scikit-learn
