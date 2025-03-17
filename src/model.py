@@ -10,14 +10,14 @@ def build_optimized_dual_model(input_shape=(224,224,3)):
       - Freeze the base initially
       - Add custom layers for dual binary outputs
     """
-    # Load MobileNetV2 as the backbone
+    # Load MobileNetV2 as the backbone model
     base_model = tf.keras.applications.MobileNetV2(
         input_shape=input_shape,
         include_top=False,
         weights='imagenet'
     )
     # Freeze base model for faster, stable initial training
-    base_model.trainable = False
+    base_model.trainable = True
 
     x = base_model.output
     # Global avg pooling to reduce dimensions

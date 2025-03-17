@@ -12,10 +12,11 @@ from sklearn.model_selection import train_test_split
 # Adjust parameters as needed
 data_augmentation = tf.keras.Sequential([
     layers.RandomFlip("horizontal"),
-    layers.RandomRotation(0.1),
+    layers.RandomRotation(0.08),
     layers.RandomZoom(0.1),
 ])
 
+# This function labels the data based on the folder structure
 def get_image_paths_and_labels(data_dir):
     """
     data_dir structure:
@@ -57,7 +58,7 @@ def get_image_paths_and_labels(data_dir):
     })
     return data_df
 
-def parse_image_label(image_path, label_hard_soft, label_bleached_healthy, img_size=(224,224), augment=True):
+def parse_image_label(image_path, label_hard_soft, label_bleached_healthy, img_size=(224,224), augment=False):
     """
     Reads an image from 'image_path', decodes, resizes, normalizes, 
     and returns (image, (label_hard_soft, label_bleached_healthy)).

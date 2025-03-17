@@ -3,6 +3,7 @@
 import numpy as np
 import tensorflow as tf
 from sklearn.metrics import confusion_matrix, classification_report
+import os
 
 def evaluate_model(model, test_ds):
     """
@@ -50,7 +51,8 @@ def evaluate_model(model, test_ds):
 
 def main():
     # 1. Load the trained model in Keras format:
-    model = tf.keras.models.load_model("dual_output_cnn_transfer.keras", compile=False)
+    model_path = os.path.join('saved_models', 'dual_output_cnn_transfer.keras')
+    model = tf.keras.models.load_model(model_path, compile=False)
     
     # 2. Recreate the test dataset (make sure parameters match training!)
     from dataset import create_datasets
